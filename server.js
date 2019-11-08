@@ -16,7 +16,7 @@ DM_API_KEY = process.env.DM_API_KEY;
 // Set given room for url parameter
 var given_room = ""
 
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/client'));
 
 server.listen(process.env.PORT || 3000);
 console.log('Server Started . . .');
@@ -32,7 +32,7 @@ console.log('Server Started . . .');
 
 app.get('/:room', function(req, res) {
     given_room = req.params.room
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/client/index.html');
 });
 
 
